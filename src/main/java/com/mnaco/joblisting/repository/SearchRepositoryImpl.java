@@ -25,8 +25,8 @@ public class SearchRepositoryImpl implements ISearch{
     public List<Post> findByText(String text) {
         final List<Post> posts = new ArrayList<>();
 
-        MongoDatabase database = client.getDatabase("mnaco");
-        MongoCollection<Document> collection = database.getCollection("JobPost");
+        MongoDatabase database = client.getDatabase("Enter Your Database Name");
+        MongoCollection<Document> collection = database.getCollection("Enter Your Collection Name");
         AggregateIterable<Document> result = collection.aggregate(Arrays.asList(new Document("$search",
                         new Document("text",
                                 new Document("query", text)
